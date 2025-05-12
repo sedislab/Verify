@@ -1,0 +1,221 @@
+{
+  "title": "VERIFY: Multi-Domain Dataset Grounding LTL in Contextual Natural Language",
+  "subtitle": "Large-scale dataset linking LTL and Natural Language",
+  "description": "VERIFY is the first large-scale, multi-domain dataset designed to bridge the gap between formal system specifications (LTL) and contextual natural language. It contains over 1.2 million rigorously generated triplets, each comprising an LTL formula, a structured Intermediate Technical Language (ITL) representation, and a domain-specific NL description. The dataset spans 13 diverse domains (e.g., finance, aerospace, medical devices). Data generation involved LTL enumeration/verification via model checking (Spot), mapping to ITL using a provably complete grammar, and LLM-driven NL generation (DeepSeek-R1), followed by extensive manual and automated validation (>99% estimated semantic correctness via Llama 3.3 judge). This dataset is intended to foster research in logic-to-language translation, formally-grounded NLP, domain adaptation, and human-centric verification. Please cite the original paper (details below) if you use this dataset in your research.",
+  "id": "paapaquansah/the-verify-dataset",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0"
+    }
+  ],
+  "keywords": [
+    "Translation",
+    "NLP",
+    "Research"
+  ],
+  "creator": [
+    {
+      "name": "Paapa Kwesi Quansah",
+      "affiliation": "Baylor University / Secured and Dependable Intelligent Systems (SeDIS) Lab"
+    },
+    {
+      "name": "Ernest Bonnah",
+      "affiliation": "Baylor University / Secured and Dependable Intelligent Systems (SeDIS) Lab"
+    },
+    {
+      "name": "Pablo Rivas Perea",
+      "affiliation": "Baylor University"
+    }
+  ],
+  "maintainer": [
+    {
+      "name": "Paapa Kwesi Quansah",
+      "email": "paapa_quansah1@baylor.edu"
+    }
+  ],
+  "provenance": {
+    "source": "Generated via the pipeline described in the associated research paper 'VERIFY: The First Multi-Domain Dataset Grounding LTL in Contextual Natural Language via Provable Intermediate Logic'. LTL formulas enumerated and verified using Spot, ITL generated via rule-based transformation, NL generated using DeepSeek-R1.",
+    "collection_method": "Automated Generation with Formal Verification and LLM-based Translation/Validation"
+  },
+  "citations": [
+    {
+      "style": "APA",
+      "citation": "Quansah, P. K., Bonnah, E., & Rivas Perea, P. (2025). VERIFY: The First Multi-Domain Dataset Grounding LTL in Contextual Natural Language via Provable Intermediate Logic. *Preprint available at [Insert ArXiv/Conference Link if available]*."
+    }
+  ],
+  "resources": [
+    {
+      "path": "combined_formulas.csv",
+      "description": "Main dataset file containing LTL-ITL-NL triplets and associated metadata in CSV format.",
+      "format": "csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "formula_id",
+            "type": "integer",
+            "description": "Unique identifier linking to the specific LTL formula structure."
+          },
+          {
+            "name": "formula",
+            "type": "string",
+            "description": "The raw LTL formula string (potentially non-canonical)."
+          },
+          {
+            "name": "latex",
+            "type": "string",
+            "description": "LaTeX representation of the LTL formula."
+          },
+          {
+            "name": "formula_canonical_form",
+            "type": "string",
+            "description": "Canonical string representation of the LTL formula (derived from Spot)."
+          },
+          {
+            "name": "depth",
+            "type": "integer",
+            "description": "Structural depth of the LTL formula's abstract syntax tree."
+          },
+          {
+            "name": "itl_id",
+            "type": "integer",
+            "description": "Identifier linking to the specific unique ITL structure/template."
+          },
+          {
+            "name": "itl_text",
+            "type": "string",
+            "description": "The corresponding Intermediate Technical Language (ITL) string."
+          },
+          {
+            "name": "generation_method",
+            "type": "string",
+            "description": "Method used to generate the ITL representation (e.g., 'rule-based')."
+          },
+          {
+            "name": "verified",
+            "type": "boolean",
+            "description": "Whether the ITL representation's semantic equivalence to LTL was verified."
+          },
+          {
+            "name": "is_correct",
+            "type": "boolean",
+            "description": "Whether the ITL representation is considered correct based on validation checks."
+          },
+          {
+            "name": "translation_id",
+            "type": "integer",
+            "description": "Unique identifier for this specific translation instance."
+          },
+          {
+            "name": "domain",
+            "type": "string",
+            "description": "The application domain providing context (e.g., 'Aerospace', 'Financial Services')."
+          },
+          {
+            "name": "activity",
+            "type": "string",
+            "description": "Natural language definitions of the propositional variables (e.g., p, q) used in the LTL formula for the given domain."
+          },
+          {
+            "name": "translation",
+            "type": "string",
+            "description": "The contextual Natural Language description corresponding to the LTL/ITL pair within the specified domain."
+          },
+          {
+            "name": "generation_time",
+            "type": "number",
+            "description": "Time taken (in seconds) for the generation pipeline steps for this record."
+          }
+        ]
+      }
+    },
+    {
+      "path": "combined_formulas.parquet",
+      "description": "Main dataset file containing LTL-ITL-NL triplets and associated metadata in Apache Parquet format (more efficient for large datasets).",
+      "format": "parquet",
+      "schema": {
+        "fields": [
+          {
+            "name": "formula_id",
+            "type": "integer",
+            "description": "Unique identifier linking to the specific LTL formula structure."
+          },
+          {
+            "name": "formula",
+            "type": "string",
+            "description": "The raw LTL formula string (potentially non-canonical)."
+          },
+          {
+            "name": "latex",
+            "type": "string",
+            "description": "LaTeX representation of the LTL formula."
+          },
+          {
+            "name": "formula_canonical_form",
+            "type": "string",
+            "description": "Canonical string representation of the LTL formula (derived from Spot)."
+          },
+          {
+            "name": "depth",
+            "type": "integer",
+            "description": "Structural depth of the LTL formula's abstract syntax tree."
+          },
+          {
+            "name": "itl_id",
+            "type": "integer",
+            "description": "Identifier linking to the specific unique ITL structure/template."
+          },
+          {
+            "name": "itl_text",
+            "type": "string",
+            "description": "The corresponding Intermediate Technical Language (ITL) string."
+          },
+          {
+            "name": "generation_method",
+            "type": "string",
+            "description": "Method used to generate the ITL representation (e.g., 'rule-based')."
+          },
+          {
+            "name": "verified",
+            "type": "boolean",
+            "description": "Whether the ITL representation's semantic equivalence to LTL was verified."
+          },
+          {
+            "name": "is_correct",
+            "type": "boolean",
+            "description": "Whether the ITL representation is considered correct based on validation checks."
+          },
+          {
+            "name": "translation_id",
+            "type": "integer",
+            "description": "Unique identifier for this specific translation instance."
+          },
+          {
+            "name": "domain",
+            "type": "string",
+            "description": "The application domain providing context (e.g., 'Aerospace', 'Financial Services')."
+          },
+          {
+            "name": "activity",
+            "type": "string",
+            "description": "Natural language definitions of the propositional variables (e.g., p, q) used in the LTL formula for the given domain."
+          },
+          {
+            "name": "translation",
+            "type": "string",
+            "description": "The contextual Natural Language description corresponding to the LTL/ITL pair within the specified domain."
+          },
+          {
+            "name": "generation_time",
+            "type": "number",
+            "description": "Time taken (in seconds) for the generation pipeline steps for this record."
+          }
+        ]
+      }
+    },
+    {
+      "path": "README.md",
+      "description": "Provides an overview of the dataset, statistics, schema, and usage notes."
+    }
+  ]
+}
