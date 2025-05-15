@@ -1,16 +1,3 @@
----
-license: cc-by-4.0
-task_categories:
-- translation
-- question-answering
-language:
-- en
-tags:
-- code
-size_categories:
-- 100K<n<1M
----
-
 # The VERIFY Dataset
 
 VERIFY is a large-scale dataset for enabling formal language translation. It contains formal LTL formulas with their LaTeX representations, ITL (Intermediate Technical Language) representations, and natural language translations across different domains.
