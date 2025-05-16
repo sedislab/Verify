@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environment folders
+venv/
+.venv/
+env/
+.env/
+
+# VSCode settings (optional)
+.vscode/
+
+# macOS and Windows system files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Python packaging
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Logs and local dev files
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
