@@ -67,7 +67,7 @@ If you find our work useful, please consider citing us!
 ```bibtex
 @article{tag,
   title   = {VERIFY: The First Multi-Domain Dataset Grounding LTL in Contextual Natural Language via Provable Intermediate Logic},
-  author  = {Quansah, Paapa Kwesi and Bonnah, Ernest and Rivas, Pablo Perea},
+  author  = {Quansah, Paapa Kwesi and Rivas, Pablo Perea and Bonnah, Ernest},
   year    = {2025},
   journal = { }
 }
