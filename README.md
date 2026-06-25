@@ -65,11 +65,11 @@ The pipeline we used to produce the data is fully open-sourced!
 If you find our work useful, please consider citing us!
 
 ```bibtex
-@article{tag,
-  title   = {VERIFY: The First Multi-Domain Dataset Grounding LTL in Contextual Natural Language via Provable Intermediate Logic},
-  author  = {Quansah, Paapa Kwesi and Rivas, Pablo Perea and Bonnah, Ernest},
-  year    = {2025},
-  journal = { }
+@inproceedings{quansah2026verify,
+  title={VERIFY: A Novel Multi-Domain Dataset Grounding LTL in Contextual Natural Language via Provable Intermediate Logic},
+  author={Quansah, Paapa Kwesi and Rivas, Pablo and Bonnah, Ernest},
+  booktitle={The Fourteenth International Conference on Learning Representations},
+  year={2026}
 }
 ```
 
